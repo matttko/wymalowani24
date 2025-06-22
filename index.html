@@ -8,63 +8,6 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body,html{height:100%;scroll-behavior:smooth;font-family:'Inter',sans-serif;color:#fff}
-    h1{font-size:3rem;margin-bottom:.5rem;line-height:1.2}
-    h2{font-size:2rem;margin-bottom:1rem;}
-    p{font-size:1.125rem;max-width:700px;margin:0 auto 1.5rem;}
-    a.btn{
-      display:inline-block;padding:.75rem 1.75rem;border-radius:6px;background:#ff6600;font-weight:700;text-decoration:none;color:#fff;
-    }
-
-    /* MENU HAMBURGER */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 1rem;
-      z-index: 1000;
-    }
-
-    .navbar img {
-      height: 40px;
-    }
-
-    .menu-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
-    .menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.95);
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem 0;
-    }
-
-    .menu a {
-      color: white;
-      text-decoration: none;
-      font-size: 1.25rem;
-      margin: 1rem 0;
-      font-weight: bold;
-    }
-
-    .menu.show {
-      display: flex;
-    }
-
     .slide{
       height:100vh;
       width:100%;
@@ -84,6 +27,12 @@
       background:rgba(0,0,0,.45);
     }
     .slide>div{position:relative;z-index:1;max-width:80%;}
+    h1{font-size:3rem;margin-bottom:.5rem;line-height:1.2}
+    h2{font-size:2rem;margin-bottom:1rem;}
+    p{font-size:1.125rem;max-width:700px;margin:0 auto 1.5rem;}
+    a.btn{
+      display:inline-block;padding:.75rem 1.75rem;border-radius:6px;background:#ff6600;font-weight:700;text-decoration:none;color:#fff;
+    }
     .scroll-down{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);font-size:.9rem;opacity:.8;}
     .scroll-down::after{content:" ↓";animation:bounce 1.5s infinite;}
     @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
@@ -91,33 +40,10 @@
     #kontakt p{margin:.25rem 0;font-size:1.125rem;}
     footer{background:#000;text-align:center;padding:1rem;font-size:.8rem;color:#aaa;}
     @media(max-width:600px){h1{font-size:2rem;}h2{font-size:1.5rem;}}
-
-    :target::before {
-      content: "";
-      display: block;
-      height: 80px;
-      margin-top: -80px;
-    }
   </style>
 </head>
 <body>
-
-  <!-- HAMBURGER NAVBAR -->
-  <div class="navbar">
-    <img src="logo-wymalowani24.png" alt="Logo" />
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-  </div>
-
-  <div class="menu" id="mobileMenu">
-    <a href="#onas" onclick="toggleMenu()">O nas</a>
-    <a href="#realizacje" onclick="toggleMenu()">Realizacje</a>
-    <a href="#opinie" onclick="toggleMenu()">Opinie</a>
-    <a href="#cennik" onclick="toggleMenu()">Cennik</a>
-    <a href="#kontakt" onclick="toggleMenu()">Kontakt</a>
-  </div>
-
-  <!-- HERO -->
-  <section class="slide" style="background-image:url('1000008382.jpg');padding-top:3.5rem;">
+  <section class="slide" style="background-image:url('1000008382.jpg');">
     <div>
       <h1>Wymalowani24.pl</h1>
       <p>Profesjonalne malowanie natryskowe – szybko, czysto i dokładnie.</p>
@@ -126,25 +52,7 @@
     <span class="scroll-down">Przewiń w dół</span>
   </section>
 
-  <!-- O NAS -->
-  <section class="slide" style="background:#1a1a1a;" id="onas">
-    <div>
-      <h2>Poznajmy się</h2>
-      <p>
-        Malowanie natryskowe to nasza codzienność i pasja. Korzystamy z nowoczesnego urządzenia <strong>Wagner ControlPro 350R</strong>, które zapewnia wyjątkowo równomierne i estetyczne pokrycie każdej powierzchni.
-      </p>
-      <p>
-        Pracujemy w dowolnej kolorystyce – oferujemy <strong>nieograniczoną paletę barw</strong>, aby idealnie dopasować się do Twojego wnętrza i stylu.
-      </p>
-      <p>
-        Do każdego zlecenia podchodzimy z pełnym zaangażowaniem i dbałością o detale. <br>
-        <small style="opacity:0.7;">Działamy nieprzerwanie od 2018 roku.</small>
-      </p>
-    </div>
-  </section>
-
-  <!-- REALIZACJE -->
-  <section class="slide" style="background-image:url('e29918a3-62f4-4351-8562-0a4d9fb40026 (1).jpeg');" id="realizacje">
+  <section class="slide" style="background-image:url('e29918a3-62f4-4351-8562-0a4d9fb40026 (1).jpeg');">
     <div>
       <h2>Szybkość i precyzja</h2>
       <p>Duże powierzchnie malujemy w jeden dzień, pozostawiając idealnie gładkie wykończenie bez smug.</p>
@@ -165,29 +73,6 @@
     </div>
   </section>
 
-  <!-- OPINIE -->
-  <section class="slide" style="background:#222;" id="opinie">
-    <div>
-      <h2>Opinie klientów</h2>
-      <p>Tu pojawią się autentyczne opinie klientów z naszej wizytówki Google.</p>
-    </div>
-  </section>
-
-  <!-- CENNIK -->
-  <section class="slide" style="background:#333;" id="cennik">
-    <div>
-      <h2>Cennik usług</h2>
-      <p>Dwukrotne malowanie ścian – od 24 zł/m²<br />
-         Gruntowanie ścian – od 6 zł/m²<br />
-         Skrobanie ścian – od 15 zł/m²<br />
-         Zrywanie tapet – od 20 zł/m²<br />
-         Gładź dwukrotnie – od 45 zł/m²<br />
-         <br /><small>Cena zależy od metrażu, układu pomieszczeń i koloru.</small>
-      </p>
-    </div>
-  </section>
-
-  <!-- KONTAKT -->
   <section id="kontakt" class="slide" style="background-image:none;">
     <div>
       <h2>Skontaktuj się z nami</h2>
@@ -197,11 +82,24 @@
   </section>
 
   <footer>&copy; 2025 Wymalowani24.pl – malowanie natryskowe z klasą</footer>
+</body>
+</html>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('mobileMenu').classList.toggle('show');
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.getElementById('mobileMenu');
+
+      toggle.addEventListener('click', function() {
+        menu.classList.toggle('show');
+      });
+
+      document.querySelectorAll('.menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.remove('show');
+        });
+      });
+    });
   </script>
 </body>
 </html>
