@@ -177,38 +177,49 @@
   </section>
 
   <footer>&copy; 2025 Wymalowani24.pl – malowanie natryskowe z klasą</footer>
-</body>
-</html>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const toggle = document.querySelector('.menu-toggle');
-      const menu = document.getElementById('mobileMenu');
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".menu-toggle");
+      const menu = document.getElementById("mobileMenu");
+      const links = document.querySelectorAll(".menu a");
 
-      toggle.addEventListener('click', function() {
-        menu.classList.toggle('show');
+      toggle.addEventListener("click", function () {
+        menu.classList.toggle("show");
       });
 
-      document.querySelectorAll('.menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          menu.classList.remove('show');
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 600) {
+            menu.classList.remove("show");
+          }
         });
       });
     });
   </script>
 </body>
-</html
+</html>
+
+
   
-  <!-- HAMBURGER NAVBAR -->
-  <div class="navbar">
-    <img src="logo-wymalowani24.png" alt="Logo" />
-    <button class="menu-toggle">☰</button>
-    <div class="menu" id="mobileMenu">
-      <a href="#onas">O nas</a>
-      <a href="#realizacje">Realizacje</a>
-      <a href="#opinie">Opinie</a>
-      <a href="#cennik">Cennik</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-  </div>
->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.querySelector(".menu-toggle");
+      const menu = document.getElementById("mobileMenu");
+      const links = document.querySelectorAll(".menu a");
+
+      toggle.addEventListener("click", function () {
+        menu.classList.toggle("show");
+      });
+
+      links.forEach(link => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 600) {
+            menu.classList.remove("show");
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
