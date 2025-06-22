@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>wymalowani24.pl - Malowanie natryskowe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      background-color: #f6f6f6;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    header a {
+      display: inline-block;
+      background: #111;
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      text-align: center;
+    }
+    .icons div {
+      flex: 1 1 30%;
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 1rem;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      max-height: 300px;
+    }
+    .contact {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f6f6f6;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Wymalowani24.pl</h1>
+    <p>Nowoczesne malowanie natryskowe - szybko, czysto i dokładnie</p>
+    <a href="#kontakt">Skontaktuj się</a>
+  </header>
+
+  <section class="section">
+    <h2 style="text-align:center;">Dlaczego warto nas wybrać?</h2>
+    <div class="icons">
+      <div><h3>Szybkość</h3><p>Malujemy nawet 200 m² dziennie</p></div>
+      <div><h3>Precyzja</h3><p>Idealne krycie bez smug i zacieków</p></div>
+      <div><h3>Porządek</h3><p>Zabezpieczamy wszystko przed malowaniem</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 style="text-align:center;">Nasze realizacje</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1615873968403-89e6fdcdbf97?auto=format&fit=crop&w=800&q=80" alt="Malowanie 1">
+      <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=800&q=80" alt="Malowanie 2">
+      <img src="https://images.unsplash.com/photo-1626176722843-c9bd6c73868c?auto=format&fit=crop&w=800&q=80" alt="Malowanie 3">
+    </div>
+  </section>
+
+  <section class="section contact" id="kontakt">
+    <h2>Skontaktuj się z nami</h2>
+    <p>📞 <a href="tel:733433772">733 433 772</a></p>
+    <p>📧 <a href="mailto:kontakt@wymalowani24.pl">kontakt@wymalowani24.pl</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Wymalowani24.pl – malowanie natryskowe z klasą
+  </footer>
+
+</body>
+</html>
