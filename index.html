@@ -46,6 +46,7 @@
       padding: 2rem;
       border-radius: 8px;
       max-width: 800px;
+      text-align: center;
     }
     h2 {
       font-size: 2rem;
@@ -58,61 +59,64 @@
       list-style-type: none;
       padding: 0;
     }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+    }
+    .service-box {
+      background-color: #222;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+    }
+    .service-box h3 {
+      margin-top: 0.5rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Wymalowani24</h1>
     <nav>
-      <a href="#about">O nas</a>
-      <a href="#realizacje">Realizacje</a>
+      <a href="#start">Start</a>
+      <a href="#uslugi">Wykonujemy</a>
       <a href="#cennik">Cennik</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
-  <section id="about" style="background-image: url('photo1.jpg');">
+  <section id="start" style="background-image: url('photo1.jpg');">
     <div class="overlay">
       <h2>Profesjonalne malowanie natryskowe</h2>
-      <p>Oferujemy szybkie, dokładne i estetyczne malowanie natryskowe mieszkań, pokoi, garaży i innych wnętrz. Działamy na terenie Krakowa i Jastrzębia-Zdroju.</p>
+      <p>Precyzja. Szybkość. Perfekcyjny efekt.</p>
     </div>
   </section>
 
-  <section id="realizacje" style="background-image: url('photo2.jpg');">
+  <section id="uslugi" style="background-color: #111;">
     <div class="overlay">
-      <h2>Nasze realizacje</h2>
-      <p>Zobacz, jak działamy – efekty naszej pracy mówią same za siebie.</p>
-    </div>
-  </section>
-
-  <section style="background-image: url('photo3.jpg');">
-    <div class="overlay">
-      <h2>Nowoczesny sprzęt</h2>
-      <p>Pracujemy na profesjonalnym agregacie Wagner ControlPro 350R, zapewniając wysoką jakość wykończenia.</p>
-    </div>
-  </section>
-
-  <section id="cennik" style="background-image: url('photo4.jpg');">
-    <div class="overlay">
-      <h2>Cennik</h2>
-      <ul>
-        <li><strong>Dwukrotne malowanie ścian:</strong> od 24 zł/m²</li>
-        <li><strong>Gruntowanie ścian:</strong> od 6 zł/m²</li>
-        <li><strong>Skrobanie ścian:</strong> od 15 zł/m²</li>
-        <li><strong>Zrywanie tapet:</strong> od 20 zł/m²</li>
-        <li><strong>Dwukrotne położenie gładzi:</strong> od 45 zł/m²</li>
-      </ul>
-      <p>Cena usług może się różnić w zależności od metrażu, układu pomieszczeń, wybranej kolorystyki czy klasy ścieralności farb, dlatego każda wycena jest przeprowadzana indywidualnie.</p>
-      <p>Jeżeli chcą Państwo uzyskać dokładną wycenę, zachęcamy do kontaktu i umówienia się na wizytę. Wycena jest niezobowiązująca i bezpłatna.</p>
-    </div>
-  </section>
-
-  <section id="kontakt" style="background-image: url('photo5.jpg');">
-    <div class="overlay">
-      <h2>Kontakt</h2>
-      <p>Skontaktuj się z nami telefonicznie lub mailowo, aby umówić się na wycenę:</p>
-      <p><strong>Telefon:</strong> 733 433 772<br />
-      <strong>Email:</strong> kontakt@wymalowani24.pl</p>
+      <h2>Wykonujemy</h2>
+      <div class="services">
+        <div class="service-box">
+          <h3>Malowanie natryskowe</h3>
+          <p>Idealne krycie, szybka realizacja.</p>
+        </div>
+        <div class="service-box">
+          <h3>Gruntowanie</h3>
+          <p>Profesjonalne przygotowanie ścian.</p>
+        </div>
+        <div class="service-box">
+          <h3>Skrobanie i tapety</h3>
+          <p>Usuwanie starych powłok, tapet.</p>
+        </div>
+        <div class="service-box">
+          <h3>Położenie gładzi</h3>
+          <p>Gładkie ściany pod idealne malowanie.</p>
+        </div>
+      </div>
     </div>
   </section>
 </body>
