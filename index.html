@@ -360,24 +360,27 @@
 
 
   
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.querySelector(".menu-toggle");
-      const menu = document.getElementById("mobileMenu");
-      const links = document.querySelectorAll(".menu a");
+  
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("mobileMenu");
+  const links = menu.querySelectorAll("a");
 
-      toggle.addEventListener("click", function () {
-        menu.classList.toggle("show");
-      });
-
-      links.forEach(link => {
-        link.addEventListener("click", () => {
-          if (window.innerWidth <= 600) {
-            menu.classList.remove("show");
-          }
-        });
-      });
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("show");
     });
-  </script>
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 600) {
+        menu.classList.remove("show");
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
