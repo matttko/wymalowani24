@@ -40,7 +40,31 @@
     #kontakt p{margin:.25rem 0;font-size:1.125rem;}
     footer{background:#000;text-align:center;padding:1rem;font-size:.8rem;color:#aaa;}
     @media(max-width:600px){h1{font-size:2rem;}h2{font-size:1.5rem;}}
-  </style>
+  
+    @media (min-width: 601px) {
+      .menu {
+        display: flex !important;
+        position: static;
+        background: none;
+        flex-direction: row;
+        gap: 1.5rem;
+        padding: 0;
+        margin-right: 1rem;
+        justify-content: flex-end;
+      }
+      .menu a {
+        font-size: 1rem;
+        margin: 0;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .navbar {
+        justify-content: space-between;
+      }
+    }
+
+</style>
 </head>
 <body>
   <section class="slide" style="background-image:url('1000008382.jpg');">
@@ -102,4 +126,18 @@
     });
   </script>
 </body>
-</html>
+</html
+  <!-- HAMBURGER NAVBAR -->
+  <div class="navbar">
+    <img src="logo-wymalowani24.png" alt="Logo" />
+    <button class="menu-toggle">☰</button>
+  </div>
+
+  <div class="menu" id="mobileMenu">
+    <a href="#onas">O nas</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#kontakt">Kontakt</a>
+  </div>
+>
