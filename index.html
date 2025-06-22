@@ -8,6 +8,8 @@
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body,html{height:100%;scroll-behavior:smooth;font-family:'Inter',sans-serif;color:#fff}
+    nav{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,0.6);padding:0.75rem 0;z-index:1000;text-align:center;}
+    nav a{color:#fff;margin:0 1rem;text-decoration:none;font-weight:700;}
     .slide{
       height:100vh;
       width:100%;
@@ -43,7 +45,17 @@
   </style>
 </head>
 <body>
-  <section class="slide" style="background-image:url('1000008382.jpg');">
+  <!-- MENU -->
+  <nav>
+    <a href="#onas">O nas</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="slide" style="background-image:url('1000008382.jpg');padding-top:3.5rem;" id="onas">
     <div>
       <h1>Wymalowani24.pl</h1>
       <p>Profesjonalne malowanie natryskowe – szybko, czysto i dokładnie.</p>
@@ -52,7 +64,8 @@
     <span class="scroll-down">Przewiń w dół</span>
   </section>
 
-  <section class="slide" style="background-image:url('e29918a3-62f4-4351-8562-0a4d9fb40026 (1).jpeg');">
+  <!-- REALIZACJE -->
+  <section class="slide" style="background-image:url('e29918a3-62f4-4351-8562-0a4d9fb40026 (1).jpeg');" id="realizacje">
     <div>
       <h2>Szybkość i precyzja</h2>
       <p>Duże powierzchnie malujemy w jeden dzień, pozostawiając idealnie gładkie wykończenie bez smug.</p>
@@ -73,6 +86,29 @@
     </div>
   </section>
 
+  <!-- OPINIE -->
+  <section class="slide" style="background:#222;" id="opinie">
+    <div>
+      <h2>Opinie klientów</h2>
+      <p>Tu pojawią się autentyczne opinie naszych klientów.</p>
+    </div>
+  </section>
+
+  <!-- CENNIK -->
+  <section class="slide" style="background:#333;" id="cennik">
+    <div>
+      <h2>Cennik usług</h2>
+      <p>Dwukrotne malowanie ścian – od 24 zł/m²<br />
+         Gruntowanie ścian – od 6 zł/m²<br />
+         Skrobanie ścian – od 15 zł/m²<br />
+         Zrywanie tapet – od 20 zł/m²<br />
+         Gładź dwukrotnie – od 45 zł/m²<br />
+         <br /><small>Cena zależy od metrażu, układu pomieszczeń i koloru.</small>
+      </p>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
   <section id="kontakt" class="slide" style="background-image:none;">
     <div>
       <h2>Skontaktuj się z nami</h2>
