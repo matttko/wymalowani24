@@ -4,82 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Wymalowani24</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
+      color: #fff;
       scroll-behavior: smooth;
     }
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #ffffffcc;
-      display: flex;
-      justify-content: center;
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 1000;
-      padding: 10px 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
     }
     nav a {
-      margin: 0 15px;
+      color: #fff;
       text-decoration: none;
-      color: #333;
-      font-weight: bold;
+      margin-left: 1.5rem;
     }
-    .section {
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
+    section {
+      min-height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: white;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-      font-size: 2rem;
-      padding: 20px;
-      text-align: center;
+      background-size: cover;
+      background-position: center;
+      padding: 2rem;
     }
-    #cennik {
-      background: #f8f8f8;
-      color: #000;
-      text-shadow: none;
-      padding: 60px 20px;
-      font-size: 1.2rem;
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 800px;
     }
-    #cennik h2 {
+    h2 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 1rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
     }
   </style>
 </head>
 <body>
   <header>
+    <h1>Wymalowani24</h1>
     <nav>
-      <a href="#start">Start</a>
+      <a href="#about">O nas</a>
+      <a href="#realizacje">Realizacje</a>
       <a href="#cennik">Cennik</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
-  <div id="start" class="section" style="background-image: url('images/realizacja1.jpg');">
-    Profesjonalne malowanie natryskowe
-  </div>
-  <div class="section" style="background-image: url('images/realizacja2.jpg');"></div>
-  <div class="section" style="background-image: url('images/realizacja3.jpg');"></div>
-  <div class="section" style="background-image: url('images/realizacja4.jpg');"></div>
-  <div class="section" style="background-image: url('images/realizacja5.jpg');"></div>
-  <div class="section" style="background-image: url('images/realizacja6.jpg');"></div>
+  <section id="about" style="background-image: url('photo1.jpg');">
+    <div class="overlay">
+      <h2>Profesjonalne malowanie natryskowe</h2>
+      <p>Oferujemy szybkie, dokładne i estetyczne malowanie natryskowe mieszkań, pokoi, garaży i innych wnętrz. Działamy na terenie Krakowa i Jastrzębia-Zdroju.</p>
+    </div>
+  </section>
 
-  <div id="cennik">
-    <h2>Cennik</h2>
-    <p><strong>Dwukrotne malowanie ścian</strong><br />od 24 zł/m²</p>
-    <p><strong>Gruntowanie ścian</strong><br />od 6 zł/m²</p>
-    <p><strong>Skrobanie ścian</strong><br />od 15 zł/m²</p>
-    <p><strong>Zrywanie tapet</strong><br />od 20 zł/m²</p>
-    <p><strong>Dwukrotne położenie gładzi</strong><br />od 45 zł/m²</p>
-    <br />
-    <p>Cena usług może się różnić w zależności od metrażu, układu pomieszczeń, wybranej kolorystyki czy klasy ścieralności farb, dlatego każda wycena jest przeprowadzana indywidualnie. Jeżeli chcą Państwo uzyskać dokładną wycenę, zachęcamy do kontaktu i umówienia się na wizytę. Wycena jest niezobowiązująca i bezpłatna.</p>
-  </div>
+  <section id="realizacje" style="background-image: url('photo2.jpg');">
+    <div class="overlay">
+      <h2>Nasze realizacje</h2>
+      <p>Zobacz, jak działamy – efekty naszej pracy mówią same za siebie.</p>
+    </div>
+  </section>
+
+  <section style="background-image: url('photo3.jpg');">
+    <div class="overlay">
+      <h2>Nowoczesny sprzęt</h2>
+      <p>Pracujemy na profesjonalnym agregacie Wagner ControlPro 350R, zapewniając wysoką jakość wykończenia.</p>
+    </div>
+  </section>
+
+  <section id="cennik" style="background-image: url('photo4.jpg');">
+    <div class="overlay">
+      <h2>Cennik</h2>
+      <ul>
+        <li><strong>Dwukrotne malowanie ścian:</strong> od 24 zł/m²</li>
+        <li><strong>Gruntowanie ścian:</strong> od 6 zł/m²</li>
+        <li><strong>Skrobanie ścian:</strong> od 15 zł/m²</li>
+        <li><strong>Zrywanie tapet:</strong> od 20 zł/m²</li>
+        <li><strong>Dwukrotne położenie gładzi:</strong> od 45 zł/m²</li>
+      </ul>
+      <p>Cena usług może się różnić w zależności od metrażu, układu pomieszczeń, wybranej kolorystyki czy klasy ścieralności farb, dlatego każda wycena jest przeprowadzana indywidualnie.</p>
+      <p>Jeżeli chcą Państwo uzyskać dokładną wycenę, zachęcamy do kontaktu i umówienia się na wizytę. Wycena jest niezobowiązująca i bezpłatna.</p>
+    </div>
+  </section>
+
+  <section id="kontakt" style="background-image: url('photo5.jpg');">
+    <div class="overlay">
+      <h2>Kontakt</h2>
+      <p>Skontaktuj się z nami telefonicznie lub mailowo, aby umówić się na wycenę:</p>
+      <p><strong>Telefon:</strong> 733 433 772<br />
+      <strong>Email:</strong> kontakt@wymalowani24.pl</p>
+    </div>
+  </section>
 </body>
 </html>
