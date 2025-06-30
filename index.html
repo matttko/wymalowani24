@@ -3,139 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wymalowani24</title>
+  <meta name="description" content="Wymalowani24 – profesjonalne malowanie pomieszczeń i garaży od 2018">
+  <title>Wymalowani24.pl – Malowanie pomieszczeń i garaży</title>
   <style>
-    html { scroll-padding-top: 70px; }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
+    * { margin:0; padding:0; box-sizing: border-box; scroll-behavior: smooth; }
+    body, html { font-family: Arial, sans-serif; color: #333; }
+    nav { position: fixed; top:0; width:100%; background:rgba(255,255,255,0.9); display:flex; align-items:center; justify-content: space-between; padding:10px 20px; z-index:1000; }
+    nav .menu { display:flex; gap:15px; }
+    nav a { text-decoration:none; color:#333; font-weight:500; }
+    nav img.logo { height:40px; }
+    section { height:100vh; width:100%; background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center; padding:20px; }
+    section .inner { background:rgba(255,255,255,0.8); padding:20px; max-width:600px; text-align:center; border-radius:8px; }
+    #o-nas { background-image:url('realizacja1.jpg'); }
+    #realizacje { background-image:url('realizacja2.jpg'); }
+    #opinie { background-image:url('realizacja3.jpg'); }
+    #cennik { background-image:url('realizacja4.jpg'); }
+    #kontakt { background-image:url('realizacja5.jpg'); }
+    .cta { margin-top:15px; display:inline-block; padding:10px 20px; background:#007BFF; color:#fff; text-decoration:none; border-radius:5px; }
+    iframe { width:100%; height:300px; border:none; border-radius:5px; }
+    @media(max-width:768px){
+      nav .menu { display:none; }
+      nav .burger { display:block; cursor:pointer; }
+      nav.responsive .menu { display:flex; flex-direction:column; background:#fff; position:absolute; top:60px; right:20px; padding:10px; border:1px solid #ccc; }
     }
-
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background-color: #111;
-      padding: 0 1rem;
-      z-index: 10000;
-    }
-
-    .navbar img {
-      height: 48px;
-    }
-
-    .menu-toggle {
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.8rem;
-      cursor: pointer;
-      display: block;
-    }
-
-    .menu {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 64px;
-      right: 0;
-      width: 100%;
-      background-color: #111;
-      text-align: center;
-    }
-
-    .menu.show {
-      display: flex;
-    }
-
-    .menu a {
-      padding: 1rem;
-      color: white;
-      text-decoration: none;
-      font-size: 1.1rem;
-    }
-
-    @media (min-width: 601px) {
-      .menu {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        width: auto;
-        background: none;
-      }
-
-      .menu a {
-        padding: 0 1rem;
-      }
-
-      .menu-toggle {
-        display: none;
-      }
-    }
-
-    section {
-      padding: 100px 20px;
-      min-height: 100vh;
-    }
-
-    #onas { background: #1a1a1a; }
-    #realizacje { background: #111 url('realizacje.jpg') no-repeat center/cover; }
-    #opinie { background: #222; }
-    #cennik { background: #333; }
-    #kontakt { background: #444; }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <img src="logo-wymalowani24.png" alt="Logo" />
-    <button class="menu-toggle" id="menuToggle">☰</button>
-    <div class="menu" id="mobileMenu">
-      <a href="#onas">O nas</a>
-      <a href="#realizacje">Realizacje</a>
-      <a href="#opinie">Opinie</a>
-      <a href="#cennik">Cennik</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
+
+<nav id="navbar">
+  <img src="logo.png" alt="Logo Wymalowani24" class="logo">
+  <div class="burger" onclick="toggleMenu()">☰</div>
+  <div class="menu">
+    <a href="#o-nas">O nas</a>
+    <a href="#realizacje">Realizacje</a>
+    <a href="#opinie">Opinie</a>
+    <a href="#cennik">Cennik</a>
+    <a href="#kontakt">Kontakt</a>
   </div>
+</nav>
 
-  <section id="onas"><h2>O nas</h2><p>Malujemy z pasją od 2018 roku. Pracujemy urządzeniem Wagner ControlPro 350R i korzystamy z szerokiej palety kolorów.</p></section>
-  <section id="realizacje"><h2>Realizacje</h2><p>Zdjęcia naszych prac</p></section>
-  <section id="opinie"><h2>Opinie</h2><p>Opinie z wizytówki Google już wkrótce</p></section>
-  <section id="cennik"><h2>Cennik</h2><p>Dwukrotne malowanie od 24zł/m², gruntowanie od 6zł/m²…</p></section>
-  <section id="kontakt"><h2>Kontakt</h2><p>kontakt@wymalowani24.pl, tel. 733 433 772</p></section>
+<section id="o-nas">
+  <div class="inner">
+    <h1>O nas</h1>
+    <p>Jesteśmy dwójką młodych specjalistów, profesjonalnie malującą pomieszczenia i garaże. Działamy legalnie od 2018 roku.</p>
+    <a href="#kontakt" class="cta">Skontaktuj się</a>
+  </div>
+</section>
+
+<section id="realizacje">
+  <div class="inner">
+    <h1>Realizacje</h1>
+    <p>Nasze dotychczasowe projekty wykonujemy sprzętem Wagner ControlPro 350R – szybko i precyzyjnie.</p>
+  </div>
+</section>
+
+<section id="opinie">
+  <div class="inner">
+    <h1>Opinie</h1>
+    <iframe src="tutaj-iframe-google-recenzji"></iframe>
+  </div>
+</section>
+
+<section id="cennik">
+  <div class="inner">
+    <h1>Cennik</h1>
+    <p>Spersonalizowaną wycenę uzyskasz kontaktując się z nami – zapraszamy do rozmowy!</p>
+    <a href="#kontakt" class="cta">Uzyskaj wycenę</a>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="inner">
+    <h1>Kontakt</h1>
+    <p>📞 <a href="tel:+48123456789">+48 123 456 789</a><br>
+       📧 <a href="mailto:kontakt@wymalowani24.pl">kontakt@wymalowani24.pl</a>
+    </p>
+    <a href="tel:+48123456789" class="cta">Zadzwoń teraz</a>
+  </div>
+</section>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.getElementById("menuToggle");
-  const menu = document.getElementById("mobileMenu");
-  const links = document.querySelectorAll('.menu a');
-
-  if (toggle && menu) {
-    toggle.addEventListener("click", function () {
-      menu.classList.toggle("show");
-    });
+  function toggleMenu(){
+    document.getElementById('navbar').classList.toggle('responsive');
   }
-
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.getElementById(this.getAttribute('href').slice(1));
-      if (target) {
-        target.scrollIntoView({ behavior: 'smooth' });
-      }
-      if (window.innerWidth < 601 && menu.classList.contains("show")) {
-        menu.classList.remove("show");
-      }
-    });
-  });
-});
 </script>
+
 </body>
 </html>
