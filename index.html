@@ -1,168 +1,1209 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wymalowani24 – Malowanie natryskowe i wałkiem | Kraków i okolice</title>
+  <meta name="description" content="Profesjonalne malowanie natryskowe i wałkiem mieszkań, garaży i lokali. Kraków i okolice. Szybkie terminy, dokładne zabezpieczenie, faktury VAT. Zadzwoń: 733 433 772" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --c-bg: #f5f2ee;
+      --c-white: #ffffff;
+      --c-ink: #1a1612;
+      --c-ink-soft: #5a5550;
+      --c-accent: #d4520a;
+      --c-accent-dark: #a83d06;
+      --c-accent-light: #f4e8df;
+      --c-border: #e0dbd4;
+      --c-paint: #2d6a8f;
+      --font-display: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 4px;
+      --shadow: 0 4px 24px rgba(26,22,18,0.10);
+      --shadow-lg: 0 12px 48px rgba(26,22,18,0.16);
+    }
 
-<title>Malowanie natryskowe Kraków | Szybkie terminy</title>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<meta name="description" content="Malowanie natryskowe mieszkań i lokali. Równo, szybko, bez smug. Kraków i okolice.">
+    html { scroll-behavior: smooth; }
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #111;
-}
+    body {
+      font-family: var(--font-body);
+      background: var(--c-bg);
+      color: var(--c-ink);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-.topbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #111;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
-  z-index: 1000;
-}
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(245,242,238,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--c-border);
+      padding: 0 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
 
-.topbar a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.04em;
+      color: var(--c-ink);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--c-accent); }
 
-.hero {
-  padding: 120px 20px 60px;
-  text-align: center;
-  background: #f5f5f5;
-}
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--c-ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--c-accent); }
 
-.cta {
-  display: inline-block;
-  background: #ff6600;
-  color: white;
-  padding: 15px 25px;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 6px;
-  font-size: 18px;
-}
+    .nav-cta {
+      background: var(--c-accent);
+      color: var(--c-white) !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: var(--radius);
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--c-accent-dark) !important; color: var(--c-white) !important; }
 
-.section {
-  padding: 50px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 64px;
+      overflow: hidden;
+    }
 
-.grid {
-  display: grid;
-  gap: 20px;
-}
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 5vw 6rem 8vw;
+    }
 
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--c-accent-light);
+      border: 1px solid rgba(212,82,10,0.2);
+      color: var(--c-accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 100px;
+      width: fit-content;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.1s ease forwards;
+    }
 
-.box {
-  background: #f0f0f0;
-  padding: 20px;
-  border-radius: 8px;
-}
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 6vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.25s ease forwards;
+    }
 
-/* GALERIA */
-.gallery img {
-  width: 100%;
-  border-radius: 10px;
-}
+    .hero-title em {
+      font-style: normal;
+      color: var(--c-accent);
+      display: block;
+    }
 
-/* OPINIE */
-.opinion {
-  background: #fafafa;
-  padding: 15px;
-  border-left: 4px solid #ff6600;
-}
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--c-ink-soft);
+      font-weight: 300;
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.4s ease forwards;
+    }
 
-/* WHATSAPP */
-.whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px 18px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.55s ease forwards;
+    }
 
-.footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-}
-</style>
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--c-accent);
+      color: var(--c-white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover {
+      background: var(--c-accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--c-ink);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      border: 1.5px solid var(--c-border);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+    .btn-secondary:hover {
+      border-color: var(--c-accent);
+      color: var(--c-accent);
+      transform: translateY(-1px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--c-border);
+      opacity: 0;
+      animation: fadeUp 0.6s 0.7s ease forwards;
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      letter-spacing: 0.02em;
+      color: var(--c-ink);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+    .stat-num span { color: var(--c-accent); }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--c-ink-soft);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    /* Hero right — visual panel */
+    .hero-right {
+      position: relative;
+      background: var(--c-ink);
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1s 0.3s ease forwards;
+    }
+
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(212,82,10,0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, rgba(45,106,143,0.2) 0%, transparent 60%);
+    }
+
+    .hero-canvas {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paint-visual {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    /* Animated paint drip shapes */
+    .drip {
+      position: absolute;
+      border-radius: 0 0 50% 50%;
+      transform-origin: top center;
+      animation: drip 3s ease-out forwards;
+    }
+    .drip-1 {
+      width: 12px; height: 160px;
+      background: var(--c-accent);
+      top: 0; left: 22%;
+      animation-delay: 0.8s;
+      opacity: 0;
+    }
+    .drip-2 {
+      width: 8px; height: 120px;
+      background: var(--c-accent);
+      top: 0; left: 28%;
+      animation-delay: 1.1s;
+      opacity: 0;
+    }
+    .drip-3 {
+      width: 16px; height: 200px;
+      background: #e8793a;
+      top: 0; left: 48%;
+      animation-delay: 1.3s;
+      opacity: 0;
+    }
+    .drip-4 {
+      width: 10px; height: 140px;
+      background: var(--c-paint);
+      top: 0; left: 65%;
+      animation-delay: 1.0s;
+      opacity: 0;
+    }
+    .drip-5 {
+      width: 6px; height: 100px;
+      background: var(--c-paint);
+      top: 0; left: 72%;
+      animation-delay: 1.5s;
+      opacity: 0;
+    }
+
+    .roller-line {
+      position: absolute;
+      top: 40%;
+      left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08) 30%, rgba(212,82,10,0.4) 60%, transparent);
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: sweepLine 1.4s 0.5s ease-out forwards;
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      right: 3rem;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .big-text {
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: clamp(8rem, 16vw, 18rem);
+      line-height: 0.85;
+      color: rgba(255,255,255,0.04);
+      letter-spacing: -0.02em;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    section { padding: 6rem 5vw; }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      letter-spacing: 0.02em;
+      line-height: 1;
+    }
+
+    .section-desc {
+      margin-top: 1rem;
+      color: var(--c-ink-soft);
+      font-size: 1rem;
+      max-width: 520px;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    /* ─── SERVICES ─── */
+    #uslugi { background: var(--c-white); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--c-border);
+      border: 1.5px solid var(--c-border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .service-card {
+      background: var(--c-white);
+      padding: 2.5rem 2rem;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: var(--c-accent);
+      transition: width 0.3s ease;
+    }
+
+    .service-card:hover { background: #fdfcfb; }
+    .service-card:hover::after { width: 100%; }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--c-accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      color: var(--c-ink-soft);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ─── WHY US ─── */
+    #dlaczego-my {
+      background: var(--c-bg);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--c-border);
+    }
+    .why-item:first-child { padding-top: 0; }
+    .why-item:last-child { border-bottom: none; }
+
+    .why-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--c-accent);
+      line-height: 1;
+      min-width: 3rem;
+      opacity: 0.5;
+    }
+
+    .why-content strong {
+      display: block;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .why-content p {
+      color: var(--c-ink-soft);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    .why-visual {
+      background: var(--c-ink);
+      border-radius: 8px;
+      aspect-ratio: 4/5;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 2.5rem;
+    }
+
+    .why-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 100% 60% at 50% 100%, rgba(212,82,10,0.3) 0%, transparent 60%),
+        radial-gradient(ellipse 70% 50% at 10% 20%, rgba(45,106,143,0.15) 0%, transparent 50%);
+    }
+
+    .why-quote {
+      position: relative;
+      z-index: 1;
+    }
+    .why-quote-text {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      letter-spacing: 0.02em;
+      color: var(--c-white);
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+    .why-quote-text em { 
+      font-style: normal;
+      color: var(--c-accent);
+    }
+    .why-quote-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .why-big {
+      position: absolute;
+      top: 2rem; left: 2rem;
+      font-family: var(--font-display);
+      font-size: 10rem;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+    }
+
+    /* ─── PRICING ─── */
+    #cennik { background: var(--c-white); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 800px;
+    }
+
+    .price-card {
+      border: 1.5px solid var(--c-border);
+      border-radius: 8px;
+      padding: 2rem;
+      transition: border-color 0.25s, transform 0.2s, box-shadow 0.25s;
+      position: relative;
+    }
+
+    .price-card:hover {
+      border-color: var(--c-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .price-card.featured {
+      background: var(--c-ink);
+      border-color: var(--c-ink);
+      color: var(--c-white);
+    }
+
+    .price-card.featured .price-label { color: rgba(255,255,255,0.5); }
+    .price-card.featured .price-desc { color: rgba(255,255,255,0.6); }
+
+    .price-tag {
+      display: inline-block;
+      background: var(--c-accent);
+      color: white;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.6rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .price-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--c-ink-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      letter-spacing: 0.02em;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .price-amount span {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.6;
+    }
+
+    .price-desc {
+      margin-top: 0.75rem;
+      color: var(--c-ink-soft);
+      font-size: 0.88rem;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .pricing-note {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: var(--c-accent-light);
+      border-left: 3px solid var(--c-accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.9rem;
+      color: var(--c-ink-soft);
+      max-width: 800px;
+    }
+    .pricing-note strong { color: var(--c-accent); }
+
+    /* ─── CONTACT ─── */
+    #kontakt {
+      background: var(--c-ink);
+      color: var(--c-white);
+    }
+
+    #kontakt .section-tag { color: var(--c-accent); }
+    #kontakt .section-title { color: var(--c-white); }
+    #kontakt .section-desc { color: rgba(255,255,255,0.5); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--c-white);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .contact-item:hover {
+      background: rgba(212,82,10,0.15);
+      border-color: rgba(212,82,10,0.4);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 44px; height: 44px;
+      background: var(--c-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-value {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    /* Contact form */
+    .contact-form {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .form-title {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.5rem;
+      color: var(--c-white);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      color: var(--c-white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      appearance: none;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--c-accent);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 110px;
+    }
+
+    .form-group select option { background: #2a2520; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--c-accent);
+      color: var(--c-white);
+      border: none;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.9rem;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      letter-spacing: 0.03em;
+    }
+    .form-submit:hover {
+      background: var(--c-accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .form-note {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #100e0c;
+      color: rgba(255,255,255,0.35);
+      padding: 1.75rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+    footer a:hover { color: var(--c-accent); }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.04em;
+    }
+    .footer-logo span { color: var(--c-accent); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    @keyframes drip {
+      0%   { opacity: 0; transform: scaleY(0); transform-origin: top; }
+      20%  { opacity: 1; }
+      100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+    }
+    @keyframes sweepLine {
+      from { transform: scaleX(0); }
+      to   { transform: scaleX(1); }
+    }
+
+    /* ─── MOBILE ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--c-ink);
+      border-radius: 2px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    @media (max-width: 900px) {
+      nav .nav-links { display: none; }
+      .hamburger { display: flex; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .hero-left { padding: 4rem 6vw 3rem; }
+      .hero-right { min-height: 300px; }
+      .hero-stats { gap: 1.5rem; }
+
+      .services-grid { grid-template-columns: 1fr; }
+      
+      #dlaczego-my {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+      .why-visual { aspect-ratio: 16/7; }
+
+      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    @media (max-width: 500px) {
+      .hero-title { font-size: 3.2rem; }
+      .hero-actions { flex-direction: column; }
+      .btn-primary, .btn-secondary { justify-content: center; }
+    }
+
+    /* Form success */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--c-white);
+    }
+    .form-success-icon { font-size: 3rem; margin-bottom: 1rem; }
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .form-success p { color: rgba(255,255,255,0.55); }
+  </style>
 </head>
-
 <body>
 
-<div class="topbar">
-  <div>wymalowani24.pl</div>
-  <a href="tel:733433772">📞 733 433 772</a>
-</div>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">wymalowani<span>24</span></a>
+  <ul class="nav-links">
+    <li><a href="#uslugi">Usługi</a></li>
+    <li><a href="#dlaczego-my">O nas</a></li>
+    <li><a href="#cennik">Cennik</a></li>
+    <li><a href="tel:733433772" class="nav-cta">📞 Zadzwoń</a></li>
+  </ul>
+  <button class="hamburger" aria-label="Menu" onclick="this.classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-<section class="hero">
-  <h1>Malowanie natryskowe mieszkań</h1>
-  <p>Kraków i okolice • równo • szybko • bez smug</p>
-  <a class="cta" href="tel:733433772">Zadzwoń teraz</a>
-</section>
-
-<section class="section">
-  <h2>Nasze realizacje</h2>
-  <div class="grid grid-3 gallery">
-    <img src="img1.jpg">
-    <img src="img2.jpg">
-    <img src="img3.jpg">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="hero-badge">✦ Kraków i okolice</div>
+    <h1 class="hero-title">
+      Malujemy<em>zawodowo.</em>
+    </h1>
+    <p class="hero-sub">
+      Malowanie natryskowe i tradycyjne — równe wykończenie bez smug, szybkie terminy i pełne zabezpieczenie powierzchni.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:733433772" class="btn-primary">📞 733 433 772</a>
+      <a href="#cennik" class="btn-secondary">Zobacz cennik →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">15<span> zł</span></div>
+        <div class="stat-label">od / m²</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span>×</span></div>
+        <div class="stat-label">szybciej natrysk</div>
+      </div>
+      <div>
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">dokładności</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="big-text">PAINT</div>
+    <div class="hero-canvas">
+      <div class="paint-visual">
+        <div class="drip drip-1"></div>
+        <div class="drip drip-2"></div>
+        <div class="drip drip-3"></div>
+        <div class="drip drip-4"></div>
+        <div class="drip drip-5"></div>
+        <div class="roller-line"></div>
+      </div>
+    </div>
+    <div class="hero-label">Profesjonalne malowanie natryskowe • Kraków i okolice</div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Dlaczego my</h2>
-  <div class="grid grid-3">
-    <div class="box">✔ Idealnie równe ściany</div>
-    <div class="box">✔ Szybkie realizacje</div>
-    <div class="box">✔ Czysta praca</div>
+<!-- SERVICES -->
+<section id="uslugi">
+  <div class="section-header">
+    <div class="section-tag">Czym się zajmujemy</div>
+    <h2 class="section-title">Nasze usługi</h2>
+    <p class="section-desc">Wykonujemy kompleksowe prace malarskie — zarówno metodą natryskową jak i tradycyjną wałkiem.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🏠</div>
+      <div class="service-name">Malowanie mieszkań</div>
+      <p class="service-desc">Ściany i sufity w mieszkaniach oraz domach. Metoda natryskowa daje idealnie gładkie, jednolite wykończenie — bez śladów wałka.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
+      <div class="service-name">Lokale i biura</div>
+      <p class="service-desc">Odświeżamy i malujemy lokale usługowe, biura, klatki schodowe. Szybko i sprawnie, minimalizując czas przerwy w działaniu.</p>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🚗</div>
+      <div class="service-name">Garaże i hale</div>
+      <p class="service-desc">Malowanie garaży, hal magazynowych i pomieszczeń technicznych. Dobieramy odpowiednie farby do każdego rodzaju podłoża.</p>
+    </div>
   </div>
 </section>
 
-<section class="section">
-  <h2>Cennik</h2>
-  <p><strong>12–18 zł/m²</strong></p>
-  <p>Dokładna wycena po kontakcie</p>
+<!-- WHY US -->
+<section id="dlaczego-my">
+  <div>
+    <div class="section-header">
+      <div class="section-tag">Dlaczego my</div>
+      <h2 class="section-title">Jakość,<br>która widoczna</h2>
+    </div>
+    <ul class="why-list">
+      <li class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-content">
+          <strong>Malowanie natryskowe i tradycyjne</strong>
+          <p>Dysponujemy agregatem natryskowym, który pozwala uzyskać perfekcyjnie gładką powierzchnię 3× szybciej niż metodą wałkową. Na życzenie wykonujemy też tradycyjne malowanie wałkiem.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-content">
+          <strong>Dokładne zabezpieczenie powierzchni</strong>
+          <p>Przed każdą robotą szczelnie maskujemy podłogi, meble i instalacje. Po zakończeniu prac sprzątamy i zostawiamy mieszkanie w czystym stanie.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-content">
+          <strong>Szybkie terminy realizacji</strong>
+          <p>Staramy się reagować błyskawicznie. Wycenę ustalamy telefonicznie lub na miejscu, a termin dopasowujemy do Twoich potrzeb.</p>
+        </div>
+      </li>
+      <li class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-content">
+          <strong>Wystawiamy faktury VAT</strong>
+          <p>Działamy legalnie i transparentnie. Wystawiamy faktury VAT — zarówno dla klientów prywatnych, jak i firm.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="why-visual">
+    <div class="why-big">W24</div>
+    <div class="why-quote">
+      <div class="why-quote-text">Równo.<br><em>Szybko.</em><br>Czysto.</div>
+      <div class="why-quote-sub">wymalowani24.pl — Kraków i okolice</div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-  <h2>Opinie</h2>
-  <div class="opinion">„Mega szybko i czysto. Polecam!”</div>
-  <div class="opinion">„Ściany idealne – zero smug.”</div>
+<!-- PRICING -->
+<section id="cennik">
+  <div class="section-header">
+    <div class="section-tag">Cennik</div>
+    <h2 class="section-title">Przejrzyste ceny</h2>
+    <p class="section-desc">Podane ceny to orientacyjne widełki. Ostateczna wycena zależy od stanu powierzchni, wybranej metody i rodzaju farby.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-label">Malowanie wałkiem</div>
+      <div class="price-amount">od 15 <span>zł/m²</span></div>
+      <p class="price-desc">Klasyczne malowanie ścian i sufitów wałkiem. Idealne przy mniejszych powierzchniach i renowacjach.</p>
+    </div>
+    <div class="price-card featured">
+      <div class="price-tag">Polecane</div>
+      <div class="price-label">Malowanie natryskowe</div>
+      <div class="price-amount">od 15 <span>zł/m²</span></div>
+      <p class="price-desc">Perfekcyjne wykończenie bez śladów wałka. Najlepsza opcja przy nowych budowach i dużych powierzchniach.</p>
+    </div>
+  </div>
+  <div class="pricing-note">
+    <strong>Bezpłatna wycena na miejscu</strong> — zadzwoń lub napisz, a przyjedziemy ocenić zakres prac i przygotować konkretną ofertę. Cena obejmuje robociznę; farby ustalamy indywidualnie.
+  </div>
 </section>
 
-<section class="section" style="text-align:center;">
-  <h2>Skontaktuj się</h2>
-  <a class="cta" href="tel:733433772">📞 Zadzwoń</a>
-  <p>📧 kontakt@wymalowani24.pl</p>
+<!-- CONTACT -->
+<section id="kontakt">
+  <div class="contact-grid">
+    <div>
+      <div class="section-header">
+        <div class="section-tag">Skontaktuj się</div>
+        <h2 class="section-title">Zamów wycenę</h2>
+        <p class="section-desc">Zadzwoń, napisz e-mail lub wypełnij formularz — odezwiemy się najszybciej jak to możliwe.</p>
+      </div>
+      <div class="contact-methods">
+        <a href="tel:733433772" class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Telefon</div>
+            <div class="contact-value">733 433 772</div>
+          </div>
+        </a>
+        <a href="mailto:kontakt@wymalowani24.pl" class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div>
+            <div class="contact-label">E-mail</div>
+            <div class="contact-value">kontakt@wymalowani24.pl</div>
+          </div>
+        </a>
+        <div class="contact-item" style="cursor:default;">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Obszar działania</div>
+            <div class="contact-value">Kraków i okolice</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-title">Napisz do nas</div>
+      <div id="contactFormInner">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Imię i nazwisko</label>
+            <input type="text" id="fname" placeholder="Jan Kowalski" />
+          </div>
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="tel" id="fphone" placeholder="500 000 000" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Rodzaj usługi</label>
+          <select id="fservice">
+            <option value="">Wybierz...</option>
+            <option>Malowanie mieszkania</option>
+            <option>Malowanie lokalu / biura</option>
+            <option>Malowanie garażu / hali</option>
+            <option>Inne</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Wiadomość</label>
+          <textarea id="fmsg" placeholder="Opisz krótko zakres prac, metraż, lokalizację..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleFormSubmit()">Wyślij zapytanie →</button>
+        <p class="form-note">Odpowiemy w ciągu 24 godzin roboczych.</p>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="form-success-icon">✅</div>
+        <h3>Dziękujemy!</h3>
+        <p>Wiadomość wysłana. Skontaktujemy się z Tobą wkrótce.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/48733433772" target="_blank">
-💬 WhatsApp
-</a>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">wymalowani<span>24</span>.pl</div>
+  <div>© 2026 wymalowani24.pl — Kraków i okolice</div>
+  <div><a href="mailto:kontakt@wymalowani24.pl">kontakt@wymalowani24.pl</a></div>
+</footer>
 
-<div class="footer">
-  wymalowani24.pl © 2026
-</div>
+<script>
+  // Form submit mock (replace with your real backend/Formspree/EmailJS)
+  function handleFormSubmit() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    if (!name || !phone) {
+      alert('Proszę podać imię i numer telefonu.');
+      return;
+    }
+    // --- TUTAJ możesz podłączyć Formspree / EmailJS / własny backend ---
+    // Tymczasowo: pokazuje komunikat sukcesu
+    document.getElementById('contactFormInner').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
 
+    // Przykład integracji z Formspree (odkomentuj i podmień YOUR_FORM_ID):
+    /*
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: document.getElementById('fname').value,
+        phone: document.getElementById('fphone').value,
+        service: document.getElementById('fservice').value,
+        message: document.getElementById('fmsg').value,
+      })
+    }).then(r => {
+      if (r.ok) {
+        document.getElementById('contactFormInner').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      }
+    });
+    */
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Simple scroll reveal
+  const revealEls = document.querySelectorAll('.service-card, .why-item, .price-card');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealEls.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
 </body>
 </html>
